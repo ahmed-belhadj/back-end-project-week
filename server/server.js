@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
@@ -69,4 +70,5 @@ app.delete("/note/delete/:id", (req, res) => {
     });
 });
 
-app.listen(4000, () => console.log("listening on port 4000!"));
+const port = process.env.PORT || 4000;
+app.listen(port, () => console.log("listening on port 4000!"));
